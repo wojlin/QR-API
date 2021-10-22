@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR code</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/generate.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jsonview.bundle.css') }}">
+</head>
+<body>
+<div id="counter"><p><span id="counter_value" style='color:red'>{{ current_count }}</span> QR codes were generated using this page</p></div>
+<script>
+    function update_counter()
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", 'counter', false);
+        xmlHttp.send(null);
+        var count = xmlHttp.responseText;
+        console.log(count);
+        var counter_value = document.getElementById("counter_value");
+        counter_value.innerHTML = count;
+        setTimeout(update_counter, 1000)
+    }
+    setTimeout(update_counter, 1000)
+</script>
+<div id="container">
+    <div id="img_container"><img id="output_image" src="{{filename}}" alt="qr code"/></div>
+    <a class="button" href="{{ url_for('download', filename=filename) }}" download="{{filename}}">download</a>
+    <a class="button" href="/">go back</a>
+    <p>basic info:</p>
+    <div id="simple_root"></div>
+    <p>complex info:</p>
+    <div id="complex_root"></div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jsonview.bundle.js') }}"></script>
+      <script type="text/javascript">
+          var simple_data = String(decodeURI("{{simple_json}}")).replace(/&#39;/g, '"');
+          var simple_json_data = JSON.parse(simple_data);
+          const simple_tree = JsonView.createTree(simple_json_data);
+          JsonView.render(simple_tree, document.querySelector('#simple_root'));
+          JsonView.expandChildren(simple_tree);
+
+          var complex_data = String(decodeURI("{{complex_json}}")).replace(/&#39;/g, '"');
+          var complex_json_data = JSON.parse(complex_data);
+          const complex_tree = JsonView.createTree(complex_json_data);
+          JsonView.render(complex_tree, document.querySelector('#complex_root'));
+          JsonView.expandChildren(complex_tree);
+      </script>
+
+
+</div>
+</body>
+</html>

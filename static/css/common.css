@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "ubuntu";
+    src: url("../fonts/Ubuntu-M.ttf");
+}
+
+@media only screen and (max-width: 400px) {
+  #container
+    {
+    width:100% !important;
+    }
+    #counter
+    {
+    width:100% !important;
+    }
+}
+
+body
+{
+font-family: "ubuntu";
+}
+
+#container
+{
+    border: solid black 2px;
+    margin:auto;
+    padding:0;
+    width:400px;
+}
+
+#art_container
+{
+margin:auto;
+display:block;
+width:min-content;
+}
+
+#counter
+{
+    border: solid 1px black;
+    width:400px;
+    padding:5px;
+    margin:auto;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#counter p
+{
+text-align:center;
+overflow: hidden;
+word-wrap: break-word;
+}
+
+.button {
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	border-radis: 3px;
+	padding: 5px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	width: 50%;
+	transform: scale(1);
+	transition: all 0.02s;
+	text-align: center;
+}
+
+.button:hover
+{
+transform: scale(1.1);
+}

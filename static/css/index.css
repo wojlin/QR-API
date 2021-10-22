@@ -1,0 +1,90 @@
+#form_container
+{
+    border: solid 2px black;
+    margin:auto;
+    width:min-content;
+    padding:5px;
+}
+
+.color_label
+{
+ color:rgb(100,100,100);
+ font-size:12px;
+}
+
+form
+{
+    width:min-content;
+    margin:auto;
+}
+
+textarea {
+  resize: none;
+}
+
+#submit
+{
+
+    width:90%;
+    margin:auto;
+    margin-top:5px;
+    margin-bottom:5px;
+    display:block;
+}
+
+h3
+{
+font-size:10px;
+}
+
+.color_block
+{
+border: solid 1px black;
+padding:3px;
+margin:3px;
+}
+
+
+#preview
+{
+border: solid 1px black;
+width:100px;
+height:100px;
+margin:auto;
+display:block;
+background-color: rgba(255,255,255,1);
+position:relative;
+background-image:url('../images/transparent_grid.png');
+background-size: contain;
+margin-top:5px;
+margin-bottom:10px;
+}
+
+#preview_bg
+{
+position:absolute;
+top:0;
+background-color: rgba(255,255,255,1);
+mask-image: url('../images/preview_background.bmp');
+width:inherit;
+height:inherit;
+mask-size:contain;
+}
+
+#preview_code {
+    position:absolute;
+    top:0;
+	background-color: rgba(0,0,0,1);
+	mask-image: url('../images/preview_foreground.bmp');
+	width:inherit;
+    height:inherit;
+	mask-size:contain;
+}
+
+.qr_mask
+{
+    width:100px;
+    background-color:black;
+}
+
+

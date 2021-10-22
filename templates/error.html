@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>error page</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}"/>
+</head>
+<body>
+<div id="container">
+    <div id="art_container"><h3>
+╭━━━┳━━━┳━━━┳━━━┳━━━╮╭╮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+┃╭━━┫╭━╮┃╭━╮┃╭━╮┃╭━╮┃┃┃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+┃╰━━┫╰━╯┃╰━╯┃┃╱┃┃╰━╯┃┃┃╭━━┳━━╮
+┃╭━━┫╭╮╭┫╭╮╭┫┃╱┃┃╭╮╭╯┃┃┃╭╮┃╭╮┃
+┃╰━━┫┃┃╰┫┃┃╰┫╰━╯┃┃┃╰╮┃╰┫╰╯┃╰╯┃
+╰━━━┻╯╰━┻╯╰━┻━━━┻╯╰━╯╰━┻━━┻━╮┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯</h3></div>
+    <textarea rows="5" wrap="off" disabled>{{ error }}</textarea>
+</div>
+</body>
+</html>
